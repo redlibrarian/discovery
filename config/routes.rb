@@ -6,6 +6,15 @@ Rails.application.routes.draw do
 
   get 'errors/internal_server_error'
 
+
+  get '/appointments/index'
+
+  get '/appointments/book/new' => 'appointments#new'
+  post 'appointments/book'
+
+  resources :appointments
+
+
   blacklight_for :catalog, :journals, :databases, :symphony, :ebooks, :new_books
   Blacklight::Marc.add_routes(self)
 

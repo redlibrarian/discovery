@@ -10,7 +10,8 @@
 
       <div class="form-group">
       <%= f.label 'Subject' %>
-      <%= f.select(:subject, @subject, {}, { :class => 'form-control' } ) %>
+
+      <%= f.select('subject', 'subject_id', @subject.all.collect{|s| [s.name]}, { :class => 'form-control' } ) %>
       </div>
 
       <div class="form-group">

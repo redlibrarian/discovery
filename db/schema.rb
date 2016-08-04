@@ -11,7 +11,26 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20151029171613) do
+ActiveRecord::Schema.define(version: 20160725213400) do
+
+  create_table "appointment_subjects", force: :cascade do |t|
+    t.string "subject"
+    t.string "library_email"
+  end
+
+  create_table "appointments", force: :cascade do |t|
+    t.string   "name"
+    t.string   "email"
+    t.string   "one_card"
+    t.string   "best_times"
+    t.string   "topic"
+    t.string   "subject"
+    t.string   "sent_to"
+    t.string   "assigned"
+    t.string   "department"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+  end
 
   create_table "bookmarks", force: :cascade do |t|
     t.integer  "user_id",       null: false

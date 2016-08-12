@@ -15,7 +15,7 @@
 # Ignore all logfiles and tempfiles.
 /log/*.log
 /tmp
-APIauthentication.txt
+APIAuthentication.txt
 /vendor
 token.txt
 /data

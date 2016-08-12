@@ -2,6 +2,12 @@
 <% provide(:title, 'Appointment') %>
 <h2>Make an <span>Appointment</span> with a Librarian</h2>
 
+<% @appointment.errors.each do |attribute, message| %>
+ <div class='alert-danger'><%= attribute %> <%= message %></div>
+<% end %>
+
+<div class="alert-info"><%= flash[:success] %></div>
+
 <div class="row">
 <div class="col-md-6 col-md-offset-3">
 
@@ -12,8 +18,10 @@
       <div class="form-group">
       <%= f.label 'Subject' %>
 
-        <%= f.select(:subject_id, @subject.collect{|sub| [sub.subject, sub.id] } , { include_blank: true } , {class: 'form-control'} ) %>
+        <% # f.fields_for :appointment_subject do |ff| %>
 
+        <%=  f.select(:subject_id ,@subject.collect{|sub| [sub.subject, sub.id] } , { include_blank: true } , {class: 'form-control'} ) %>
+        <% # end %>
 
       </div>
 

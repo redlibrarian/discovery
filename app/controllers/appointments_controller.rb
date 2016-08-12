@@ -9,24 +9,31 @@ class AppointmentsController < ApplicationController
   end
 
   def create
+    appointment_params = params.require(:appointment).permit(:subject_id, :name, :email, :one_card, :best_times, :topic, :department)
     @appointment = Appointment.new(appointment_params)
+
+
+   # logger.debug "New appointment: #{@appointment.inspect}"
+
+
+
     if @appointment.save
+
+      #AppointmentMailer.create_appointment_email(@appointment)
+
       flash[:success] = 'Appointment has been saved'
       redirect_to appointment_url(@appointment)   # short for redirect_to appointment_url(@appointment) see chapter 7.4.1 in railstutorial.org
     else
       @subject = AppointmentSubject.order(:subject)
-      render 'appointments/book'
+      render 'appointments/book/'
     end
 
   end
 
   def new
+    # AppointmentMailer.sample_email(Appointment.first)
+
     @appointment = Appointment.new
-=begin
-        @subject = [['Agricultural, Life and Environmental Sciences'],['Arts'],['Augustana Faculty Library'],['Business, School of'],['Campus Saint-Jean'],['Education'],\
-        ['Engineering'],['Law'],['Library and Information Studies, School of'],['Medicine and Dentistry'],['Native Studies'],['Nursing'], ['Pharmacy and Pharmaceutical Sciences'],\
-        ['Physical Education and Recreation'], ['Rehabilitation Medicine'], ['School of Public Health'], ['Science'], ['Interdisciplinary Collections and Subjects']]
-=end
 
     @subject = AppointmentSubject.order(:subject)
 

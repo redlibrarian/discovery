@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta content='text/html; charset=UTF-8' http-equiv='Content-Type' />
+</head>
+<body>
+
+<p>
+  Hi <%= @appointment.name %>
+</p>
+<p>
+  Thank you for your Appointment Request.  A librarian available at the time you requested with the expertise in your subject area will contact you shortly to arrange an appointment.
+  If you do not hear from us within 2 working days (excluding weekends and holidays) please <a href="http://www.library.ualberta.ca/aboutus/">contact the library</a> directly.
+</p>
+<p>
+    Name: <%=  @appointment.name %><br>
+    Email: <%= @appointment.email %> <br>
+    One Card:<%=  @appointment.onecard %><br>
+    Department: <%= @appointment.department %> <br>
+<p>
+  Best Times for Appointment: <br>
+  <%= @appointment.besttimes  %>
+<p>
+  Topic:<br>
+  <%= @appointment.subject %>
+
+</p>
+</body>
+</html>

@@ -1,0 +1,18 @@
+
+  Hi <%= @appointment.name %>
+
+
+  Thank you for your Appointment Request.  A librarian available at the time you requested with the expertise in your subject area will contact you shortly to arrange an appointment.
+  If you do not hear from us within 2 working days (excluding weekends and holidays) please contact the library (http://www.library.ualberta.ca/aboutus/) directly.
+
+
+  Name: <%=  @appointment.name %>
+  Email: <%= @appointment.email %> 
+  One Card:<%=  @appointment.onecard %>
+  Department: <%= @appointment.department %> 
+
+  Best Times for Appointment: 
+  <%= @appointment.besttimes  %>
+
+  Topic:
+  <%= @appointment.subject %>

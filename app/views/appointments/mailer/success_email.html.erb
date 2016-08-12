@@ -15,14 +15,17 @@
 <p>
     Name: <%=  @appointment.name %><br>
     Email: <%= @appointment.email %> <br>
-    One Card:<%=  @appointment.onecard %><br>
+    One Card:<%=  @appointment.one_card %><br>
+  <% if @appointment.department != '' %>
     Department: <%= @appointment.department %> <br>
+  <% end %>
+
 <p>
   Best Times for Appointment: <br>
-  <%= @appointment.besttimes  %>
+  <%= @appointment.best_times  %>
 <p>
   Topic:<br>
-  <%= @appointment.subject %>
+  <%= @appointment.appointment_subject.subject %>
 
 </p>
 </body>

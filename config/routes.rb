@@ -7,12 +7,11 @@ Rails.application.routes.draw do
   get 'errors/internal_server_error'
 
 
-  get '/appointments/index'
+ # get '/appointments/new' => 'appointments#new'
+ # post 'appointments' => 'appointments#create'
+ # get '/appointments/:id'  => 'appointments#show'
 
-  get '/appointments/book/new' => 'appointments#new'
-  post 'appointments/book'
-
-  resources :appointments
+   resources :appointments , :only => [:new, :show, :create]
 
 
   blacklight_for :catalog, :journals, :databases, :symphony, :ebooks, :new_books

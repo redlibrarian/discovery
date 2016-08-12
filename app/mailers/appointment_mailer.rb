@@ -1,7 +1,7 @@
 class AppointmentMailer < ActionMailer::Base
 
   default from: "libwebms@ualberta.ca"
-  layout 'mailer'
+  layout 'mailer' 
 
   def appointment_email(appointment, message)
     #params.require(:appointment).permit(:subject_id)

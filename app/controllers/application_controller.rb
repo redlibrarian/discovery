@@ -41,4 +41,15 @@ class ApplicationController < ActionController::Base
     @item_types ||= YAML.load_file("#{Rails.root}/config/item_types.yml")
     @library_codes ||= YAML.load_file("#{Rails.root}/config/library_codes.yml")
   end
+
+   before_action :set_locale
+
+   def set_locale
+     I18n.locale = params[:locale] || I18n.default_locale
+   end
+
+   def default_url_options
+     { locale: I18n.locale }
+   end
+
 end

@@ -24,10 +24,11 @@ class AppointmentsController < ApplicationController
       logger.debug "EMAIL FINISHED"
 
       flash[:success] = 'Appointment has been saved'
-      redirect_to appointment_url(@appointment)   # short for redirect_to appointment_url(@appointment) see chapter 7.4.1 in railstutorial.org
+      redirect_to @appointment   # short for redirect_to appointment_url(@appointment) see chapter 7.4.1 in railstutorial.org
     else
       @subject = AppointmentSubject.order(:subject)
-      render 'appointments/book/'
+      @subject_french = AppointmentSubject.where(subject: 'Campus Saint-Jean').take
+      render 'new'
     end
 
   end
@@ -38,8 +39,9 @@ class AppointmentsController < ApplicationController
     @appointment = Appointment.new
 
     @subject = AppointmentSubject.order(:subject)
+    @subject_french = AppointmentSubject.where(subject: 'Campus Saint-Jean').take
 
-    render action: 'book'
+    # render action: 'new'
   end
 
 

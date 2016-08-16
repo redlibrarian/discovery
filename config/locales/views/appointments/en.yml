@@ -1,0 +1,31 @@
+# To use the locales, use `I18n.t`:
+#
+#     I18n.t 'hello'
+#
+# In views, this is aliased to just `t`:
+#
+#     <%= t('hello') %>
+#
+# To use a different locale, set it with `I18n.locale`:
+#
+#     I18n.locale = :es
+#
+# This would use the information in config/locales/**/es.yml.
+#
+# To learn more, please read the Rails Internationalization guide
+# available at http://guides.rubyonrails.org/i18n.html.
+
+en:
+  appointments:
+    if_you_need_help: "If you need help finding information, using databases or other electronic resources or doing library research for a major assignment, you are welcome to make an appointment with a librarian."
+    privacy_statement: "The information you submit is collected under the authority of Section 32.c. of the Freedom of Information and Protection of Privacy Act (Alberta). It is used to make an appointment with a librarian and will not be used for any other purpose. "
+    create_appointment: "Request Appointment"
+    name: "Name"
+    subject: "Subject"
+    one_card: "One Card"
+    department: "Department"
+    department_example: "(Example: Campus Saint-Jean, Elementary Education, etc.)"
+    best_times_for_appointment: "Best times for appointment"
+    topic: "Topic"
+    topic_example: "(Example: I'm starting to research cholesterol levels in young adults and I have tried MEDLINE but I need more information.)"
+    email: "Email"

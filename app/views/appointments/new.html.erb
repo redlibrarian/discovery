@@ -1,0 +1,71 @@
+
+<% provide(:title, 'Appointment') %>
+<h2><%= t("appointments.make_an_appointment_with_a_librarian") %></h2>
+
+<% @appointment.errors.each do |attribute, message| %>
+ <div class='alert-danger'><%= attribute %> <%= message %></div>
+<% end %>
+
+<div class="alert-info"><%= flash[:success] %></div>
+
+<div class="row">
+
+<div class="col-md-9 col-md-offset-1">
+  <p><%= I18n.t('appointments.if_you_need_help') %></p>
+
+<%= form_for(@appointment) do |f| %>
+
+
+      <% if I18n.locale.to_s != 'fr' %>
+      <div class="form-group">
+        <%= f.label t('appointments.subject') %>
+        <%=  f.select(:subject_id ,@subject.collect{|sub| [sub.subject, sub.id] } , { include_blank: true } , {class: 'form-control'} ) %>
+      </div>
+      <% else %>
+          <% # french page can have only 1 subject which goes to Campus Saint Jean %>
+        <%= f.hidden_field(:subject_id, {value: @subject_french.id}) %>
+      <% end %>
+
+      <div class="form-group">
+        <%= f.label t('appointments.name') %>
+        <%= f.text_field(:name,  class: 'form-control') %>
+      </div>
+      <div class="form-group">
+        <%= f.label t('appointments.email') %>
+        <%= f.email_field :email,  class: 'form-control' %>
+      </div>
+      <div class="form-group">
+        <%= f.label t('appointments.department')  %>
+        <div class="small"><%= t('appointments.department_example')  %></div>
+        <%= f.text_field :department,  class: 'form-control' %>
+      </div>
+      <div class="form-group">
+        <%= f.label t('appointments.one_card') %>
+        <%= f.text_field :one_card,  class: 'form-control' %>
+      </div>
+      <div class="form-group">
+        <%= f.label t('appointments.best_times_for_appointment') %>
+        <%= f.text_area :best_times,  class: 'form-control' %>
+      </div>
+      <div class="form-group">
+        <%= f.label t('appointments.topic') %> <br>
+        <div class="small"><%= t('appointments.topic_example') %></div>
+        <%= f.text_area :topic,  class: 'form-control' %>
+      </div>
+
+
+      <div class="form-group">
+
+      <%= f.submit t('appointments.create_appointment'), class: "btn btn-primary" %>
+      </div>
+      <p class="small">
+        <%= t('appointments.privacy_statement') %>
+
+
+<% end %>
+</div>
+</div>
+
+
+
+

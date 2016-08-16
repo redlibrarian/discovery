@@ -21,6 +21,10 @@ module VanillaBlacklight
     # config.i18n.load_path += Dir[Rails.root.join('my', 'locales', '*.{rb,yml}').to_s]
     # config.i18n.default_locale = :de
 
+    # config.i18n.load_path += Dir[Rails.root.join( 'config','locales', 'views', 'appointments' ,'**' , '*.{rb,yml}').to_s]
+    config.i18n.load_path += Dir[Rails.root.join('config/locales/**/*.yml').to_s]
+    config.i18n.default_locale = :en
+
     @c = YAML.load_file('config/ingest.yml') rescue {}
     config.proxy = @c['proxy']
     config.solr = @c['solr']

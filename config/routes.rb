@@ -11,8 +11,11 @@ Rails.application.routes.draw do
  # post 'appointments' => 'appointments#create'
  # get '/appointments/:id'  => 'appointments#show'
 
+  scope '(:locale)', locale: /en|fr/ do
+    get '/appointments', to: 'appointments#new'
+    post '/appointments', to: 'appointments#create'
    resources :appointments , :only => [:new, :show, :create]
-
+  end
 
   blacklight_for :catalog, :journals, :databases, :symphony, :ebooks, :new_books
   Blacklight::Marc.add_routes(self)

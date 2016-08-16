@@ -1,0 +1,18 @@
+
+
+fr:
+  appointments:
+    if_you_need_help: "Besoin d'aide ? N'hésitez pas à prendre rendez-vous avec notre personnel de référence. Qu'il s'agisse de trouver des renseignements, d'utiliser une base de données ou un autre type de ressource électronique ou encore de faire une recherche en vue de rédiger un travail, nous sommes à votre disposition. Vous n'avez qu'à remplir le formulaire ci-dessous."
+    contactinfo: "Renseignements sur vous"
+    make_an_appointment_with_a_librarian: "Prenez rendez-vous avec un(e) bibliothécaire"
+    name: "Nom"
+    department: "Votre département/faculté"
+    department_example: "(Exemples: Campus Saint-Jean, Education à l'élémentaire, etc.)"
+    subject: "Sujet de votre recherche"
+    best_times_for_appointment: "Votre disponibilité"
+    topic: "Sujet de votre recherche"
+    topic_example: "Exemple: Je dois trouver des ressources traitant du taux de cholestérol chez les jeunes. J'ai déjà consulté la base MEDLINE, mais il me faut plus d'information."
+    email: "Adresse électronique"
+    one_card: "No de code à barres de votre carte OneCard :"
+    create_appointment: "Envoyer la demande"
+    privacy_statement: "Les renseignements fournis dans ce formulaire sont recueillis en vertu de la Section 32.c. du Freedom of Information and Protection of Privacy Act de l'Alberta. Ils nous permettront de vous contacter pour fixer un rendez-vous et ne serviront à aucune autre fin. "

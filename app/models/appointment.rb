@@ -1,5 +1,5 @@
 class Appointment < ActiveRecord::Base
-
+	establish_connection DB_APPOINTMENTS
 	belongs_to :appointment_subject , class_name: 'AppointmentSubject', foreign_key: :subject_id
 
 

@@ -1,6 +1,7 @@
 class AppointmentSubject < ActiveRecord::Base
 
- # attr_reader :id, :subject, :library_email
+   establish_connection DB_RESERVEREQUEST
+
 
    has_many :appointments
 

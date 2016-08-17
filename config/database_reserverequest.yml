@@ -1,0 +1,22 @@
+
+development:
+  adapter: sqlite3
+  encoding: utf8
+  host: localhost
+  pool: 10
+  database: db/reserverequest.sqlite3
+
+test:
+  adapter: sqlite3
+  encoding: utf8
+  host: localhost
+  pool: 10
+  database: db/reserverequest.sqlite3
+
+
+production:
+  adapter: sqlite3
+  encoding: utf8
+  host: localhost
+  pool: 10
+  database: db/reserverequest.sqlite3

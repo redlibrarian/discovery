@@ -45,10 +45,5 @@ class AppointmentsController < ApplicationController
   end
 
 
-  private
-
-  def appointment_params
-    params.require(:appointment).permit(:name, :email,  :one_card,  :best_times,   :topic, :subject, :sent_to, :assigned, :department )
-  end
 
 end

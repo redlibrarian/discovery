@@ -3,7 +3,7 @@
 <h2><%= t("appointments.make_an_appointment_with_a_librarian") %></h2>
 
 <% @appointment.errors.each do |attribute, message| %>
- <div class='alert-danger'><%= attribute %> <%= message %></div>
+ <div class='alert-danger'><%= message %></div>
 <% end %>
 
 <div class="alert-info"><%= flash[:success] %></div>

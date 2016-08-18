@@ -6,7 +6,7 @@ class AppointmentMailer < ActionMailer::Base
   def appointment_email(appointment, message)
     #params.require(:appointment).permit(:subject_id)
 
-    logger.debug "New mailer: #{appointment.inspect}"
+  #  logger.debug "New mailer: #{appointment.inspect}"
 
     @library_email = AppointmentSubject.select(:library_email).where(:subject_id => appointment.subject_id )
     @appointment = appointment

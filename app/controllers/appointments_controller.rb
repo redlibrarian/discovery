@@ -17,11 +17,16 @@ class AppointmentsController < ApplicationController
 
     if @appointment.save
 
-      logger.debug "CALL EMAIL"
 
-      AppointmentMailer.appointment_email(@appointment, 'test').deliver_later
+      #send email notice to the library
+      @library_email = AppointmentSubject.select(:library_email).where(:id => @appointment.subject_id ).take
+      email_to = @library_email.library_email
+      AppointmentMailer.appointment_email(@appointment, email_to).deliver_now
 
-      logger.debug "EMAIL FINISHED"
+      #send email notice to the user
+      email_to = @appointment.email
+      AppointmentMailer.appointment_email(@appointment, email_to).deliver_now
+
 
       flash[:success] = 'Appointment has been saved'
       redirect_to @appointment   # short for redirect_to appointment_url(@appointment) see chapter 7.4.1 in railstutorial.org

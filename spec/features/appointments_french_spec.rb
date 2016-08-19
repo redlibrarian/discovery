@@ -7,21 +7,15 @@ RSpec.feature "French Appointment", :type => :feature do
     visit "/fr/appointments"
 
      # puts page.body
-
-
-
-   # page.find_css('#appointment_name').value.should eq ''
-
+     # page.find_css('#appointment_name').value.should eq ''
      # puts page.find(:css, '#appointment_subject_id', visible: false).value
-
-    #page.should find("appointment_subject_id")
+     #page.should find("appointment_subject_id")
 
      expect(page).to have_selector(:css, '#appointment_subject_id', visible: false)
 
 
-#    expect(page).to have_xpath("//input[@id='appointment_subject_id']")
-#    page.find('input[@id=appointment_subject_id]')
-
+    # expect(page).to have_xpath("//input[@id='appointment_subject_id']")
+    # page.find('input[@id=appointment_subject_id]')
     # page.find(:css, '#appointment_subject_id', visible: false)
 
     #page.find(:css, '#appointment_subject_id')
